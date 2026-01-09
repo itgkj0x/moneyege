@@ -7,11 +7,15 @@ import LoginIcon from '@mui/icons-material/Login';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import LogoutIcon from '@mui/icons-material/Logout';
+import EditNoteIcon from "@mui/icons-material/EditNote"
+import ShareIcon from "@mui/icons-material/Share"
 
   const Drawer_L = ({user}) => {
 
     const DrawerList_1 = [
-      { icon: HomeFilledIcon, name: 'Home', href: '/' },
+      { icon: HomeFilledIcon, name: 'ホーム', href: '/' },
+      { icon: EditNoteIcon, name: '編集', href: '/edit' },
+      { icon: ShareIcon, name: '共有', href: '/share' }
     ];
 
     const DrawerList_2 = user ? [

@@ -13,7 +13,8 @@ const Home = ({ user }) => {
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
 
-  const [month_data, setMonthData] = useState(null);
+  const [month_data, setMonthData] = useState({ expense: 0, income: 0 });
+
 
   const fetchData = async () => {
     const { data, error } = await supabase
@@ -32,8 +33,20 @@ const Home = ({ user }) => {
 
   useEffect(() => {
     fetchData()
-  }, [year, month]) // これを追加
+  }, [fetchData]) // これを追加
 
+  if(!month_data || (month_data.expense === 0 && month_data.income === 0)){
+    return (
+      <>
+      <Typography sx={{textAlign:"center",m:3}}>{user?.email}の消費記録</Typography>
+        <Typography variant='h5' sx={{textAlign:"center",m:1}}>
+          今月のデータがありません
+          <br />
+          記録しましょう
+        </Typography>
+      </>
+    );
+  }
 
   return (
     <>

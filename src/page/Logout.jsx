@@ -17,7 +17,7 @@ const Logout = ({ setUser }) => {
                 await signOut();
                 setUser(null);
                 setTimeout(() => {
-                    navigate('/login');
+                    navigate('/');
                 }, 1000);
             } catch (error) {
                 console.error('ログアウトエラー:', error);
@@ -30,7 +30,7 @@ const Logout = ({ setUser }) => {
 
   return (
     <>
-    <Typography>ログアウトしました</Typography>
+    <Typography sx={{textAlign:"center",m:5}}>ログアウトしました</Typography>
     </>
   )
 }

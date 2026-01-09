@@ -6,6 +6,8 @@ import Logout from "./page/Logout"
 import NotFound from "./page/NotFound"
 import NotLogin from "./page/NotLogin"
 import User from "./page/User"
+import Editor from "./page/Editor"
+import Share from "./page/Share"
 import { CircularProgress,Box} from "@mui/material"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { getCurrentUser } from "./supabase/supabaseAuth"
@@ -51,6 +53,8 @@ function App() {
             <Route path="/login" element={<Login user={user} setUser={setUser} />} />
             <Route path="/logout" element={<Logout setUser={setUser} />} />
             <Route path="/user" element={<User user={user} />} />
+            <Route path="/edit" element={<Editor />} />
+            <Route path="/share" element={<Share />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>
