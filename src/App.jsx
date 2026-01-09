@@ -2,8 +2,10 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./page/Home"
 import Login from "./page/Login"
+import Logout from "./page/Logout"
 import NotFound from "./page/NotFound"
 import NotLogin from "./page/NotLogin"
+import User from "./page/User"
 import { CircularProgress,Box} from "@mui/material"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { getCurrentUser } from "./supabase/supabaseAuth"
@@ -47,6 +49,8 @@ function App() {
           <Routes>
             <Route path="/" element={user ? <Home user={user} /> : <NotLogin />} />
             <Route path="/login" element={<Login user={user} setUser={setUser} />} />
+            <Route path="/logout" element={<Logout setUser={setUser} />} />
+            <Route path="/user" element={<User user={user} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>

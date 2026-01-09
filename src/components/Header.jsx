@@ -32,7 +32,7 @@ const Header = ({user}) => {
 
       <Drawer open={open} onClose={toggleDrawer(false)}>
         <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-          <Drawer_L />
+          <Drawer_L user={user}/>
         </Box>
       </Drawer>
     </>
