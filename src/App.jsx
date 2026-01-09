@@ -4,7 +4,7 @@ import Home from "./page/Home"
 import Login from "./page/Login"
 import NotFound from "./page/NotFound"
 import NotLogin from "./page/NotLogin"
-import { CircularProgress } from "@mui/material"
+import { CircularProgress,Box} from "@mui/material"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { getCurrentUser } from "./supabase/supabaseAuth"
 import { useEffect, useState } from "react";
@@ -41,14 +41,18 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Header user={user}/>
-    <Routes>
-      <Route path="/" element={user ? <Home user={user} /> : <NotLogin />} />
-      <Route path="/login" element={<Login user={user} setUser={setUser} />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-    <Footer />
-  </BrowserRouter>
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Header user={user}/>
+        <Box sx={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={user ? <Home user={user} /> : <NotLogin />} />
+            <Route path="/login" element={<Login user={user} setUser={setUser} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Box>
+        <Footer />
+      </Box>
+    </BrowserRouter>
   )
 }
 
