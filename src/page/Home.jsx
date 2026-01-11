@@ -1,5 +1,5 @@
 import { Typography,Box } from "@mui/material"
-import Table from '../components/home/Table.jsx'
+import Table_Home from "../components/home/Table_Home.jsx"
 import { PieChart } from '@mui/x-charts/PieChart';
 
 import { supabase } from '../supabase/supabaseClient.js'
@@ -71,8 +71,8 @@ const Home = ({ user }) => {
       sx={{m:1,p:0}}
       />
     <Box sx={{mr:10}}>
-      <Table user={user} sort="expense" />
-      <Table user={user} sort="income" />
+      <Table_Home user={user} sort="expense" />
+      <Table_Home user={user} sort="income" />
     </Box>
     </Box>
     </>

@@ -19,7 +19,7 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function DenseTable({ sort }) {
+export default function Table_Home({ sort }) {
   return (
     <>
     <Typography variant="h6" sx={{textAlign:"center",m:2}}>

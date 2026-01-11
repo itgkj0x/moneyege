@@ -12,10 +12,11 @@ import ShareIcon from "@mui/icons-material/Share"
 
   const Drawer_L = ({user}) => {
 
-    const DrawerList_1 = [
+    const DrawerList_1 = user ? [
       { icon: HomeFilledIcon, name: 'ホーム', href: '/' },
       { icon: EditNoteIcon, name: '編集', href: '/edit' },
       { icon: ShareIcon, name: '共有', href: '/share' }
+    ]:[{ icon: HomeFilledIcon, name: 'ホーム', href: '/' }
     ];
 
     const DrawerList_2 = user ? [
