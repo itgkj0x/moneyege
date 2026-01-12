@@ -6,6 +6,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import Table_Edit from '../components/Editor/Table_Edit.jsx';
+import Sp_Dial from '../components/Editor/Sp_Dial.jsx';
 
 const currentYear = dayjs();
 
@@ -40,6 +41,7 @@ const Editor = () => {
           </LocalizationProvider>
         </FormControl>
         <Typography>の記録</Typography>
+        <Sp_Dial  />
       </Box>
       <Table_Edit year={selectedYear} month={selectedMonth} />
     </>

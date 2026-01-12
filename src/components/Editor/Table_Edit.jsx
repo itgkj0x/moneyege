@@ -28,7 +28,7 @@ const Table_Edit = ({year, month}) => {
     
   return (
     <>
-      <TableContainer component={Paper} sx={{m:'auto',maxWidth: '80%'}}>
+      <TableContainer component={Paper} sx={{m:'auto',maxWidth: '65%'}}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
